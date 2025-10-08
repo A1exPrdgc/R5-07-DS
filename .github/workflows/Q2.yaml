@@ -18,7 +18,7 @@ jobs:
     - name: transfert de toto.txt dans archive
       run: |
         echo "Alexandre Pradignac" > Q2_archive_TOTO.txt
-        echo $(date +"%Y%m%d-%H%M%S") >> Q2_archive_TOTO.txt
+        echo $(date +"%Y%m%d-%H") >> Q2_archive_TOTO.txt
         cat TOTO.txt >> Q2_archive_TOTO.txt
         ls -lh TOTO.txt| cut -d " " -f5 >> Q2_archive_TOTO.txt
     - name: Commit et push des fichiers
@@ -26,5 +26,5 @@ jobs:
         git config user.name A1exPrdgc
         git config user.email pa230262@etu.univ-lehavre.fr
         git add Q2_archive_TOTO.txt
-        git commit -m "Ajout Q2_archive_TOTO.txt"
+        git commit -m "Ajout Q2_archive_TOTO.txt" || echo "rien"
         git push

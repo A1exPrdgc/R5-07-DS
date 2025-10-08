@@ -24,6 +24,5 @@ jobs:
         git config user.name A1exPrdgc
         git config user.email pa230262@etu.univ-lehavre.fr
         git add Q3_archive_java.txt
-        git commit -m "Ajout Q3_archive_java.txt"
+        git commit -m "Ajout Q3_archive_java.txt" || echo "rien"
         git push
-

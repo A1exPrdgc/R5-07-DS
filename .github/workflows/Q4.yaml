@@ -1,23 +1,35 @@
-name: Q1action
+name: Q4action
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on: 
+  workflow_run:
+    workflows: ["Q3action"]
+    types:
+      - completed
 permissions:
  contents: write
 jobs:
-  q1action:
+  q4action:
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository code
       uses: actions/checkout@v4
     - name: Checkout du dépôt
       uses: actions/checkout@v3
+    - name: Définir variables d’archive
+      id: vars
+      run: |
+        DATE=$(date +"%d-%m-%Y")
+        echo "DATE=$DATE" >> $GITHUB_ENV
+        echo "ARCHIVE=Q4_archive_${DATE}.txt" >> $GITHUB_ENV
     - name: transfert de toto.txt dans archive
       run: |
-        cat TOTO.txt > Q1_archive_TOTO.txt
+        echo "Alexandre Pradignac" > ${ARCHIVE}
+        cat Q4.java >> ${ARCHIVE}
     - name: Commit et push des fichiers
       run: |
         git config user.name A1exPrdgc
         git config user.email pa230262@etu.univ-lehavre.fr
-        git add Q1_archive_TOTO.txt
-        git commit -m "Ajout archive" || echo "rien"
+        git add ${ARCHIVE}
+        git commit -m "Ajout ${ARCHIVE}" || echo "rien"
         git push
+
