@@ -1,14 +1,14 @@
-name: Q2action
+name: Q3action
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
   workflow_run:
-    workflows: ["Q1action"]
+    workflows: ["Q2action"]
     types:
       - completed
 permissions:
  contents: write
 jobs:
-  q2action:
+  q3action:
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository code
@@ -26,3 +26,4 @@ jobs:
         git add Q3_archive_java.txt
         git commit -m "Ajout Q3_archive_java.txt"
         git push
+
