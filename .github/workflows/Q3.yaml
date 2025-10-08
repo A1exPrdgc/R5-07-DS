@@ -1,5 +1,4 @@
 name: Q3action
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
   workflow_run:
     workflows: ["Q2action"]

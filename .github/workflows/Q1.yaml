@@ -1,5 +1,4 @@
 name: Q1action
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 permissions:
  contents: write
