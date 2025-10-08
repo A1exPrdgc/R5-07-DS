@@ -12,7 +12,7 @@ public class Q5
                 String s = "";
                 for (int i = 0; i < cpt; i++) 
                 {
-                    s += i + " ";
+                    s += "x ";
                 }
                 s += "\n";
                 finalStr += s;
