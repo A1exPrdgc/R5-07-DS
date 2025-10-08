@@ -1,0 +1,17 @@
+public class Q3 
+{
+    public static void main(String[] args) 
+    {
+        if(args[0] != null)
+        {
+            int fin = Integer.parseInt(args[0]);
+
+            String s = "";
+            for (int i = 1; i < fin + 1; i++) 
+            {
+                s+= i + " ";
+            }
+            System.out.println(s);
+        }  
+    }    
+}
