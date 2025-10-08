@@ -1,0 +1,23 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+permissions:
+ contents: write
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v4
+    - name: Checkout du dépôt
+      uses: actions/checkout@v3
+    - name: transfert de toto.txt dans archive
+      run: |
+        cat TOTO.txt >> Q1_archive_TOTO.txt
+    - name: Commit et push des fichiers
+      run: |
+        git config user.name A1exPrdgc
+        git config user.email pa230262@etu.univ-lehavre.fr
+        git add Q1_archive_TOTO.txt
+        git commit -m "Ajout archive"
+        git push
