@@ -1,6 +1,10 @@
 name: Q2action
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on: 
+  workflow_run:
+    workflows: ["Q1action"]
+    types:
+      - completed
 permissions:
  contents: write
 jobs:
