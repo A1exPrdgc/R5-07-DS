@@ -16,7 +16,7 @@ jobs:
         echo "Alexandre Pradignac" > Q2_archive_TOTO.txt
         echo $(date +"%Y%m%d-%H%M%S") >> Q2_archive_TOTO.txt
         cat TOTO.txt >> Q2_archive_TOTO.txt
-        ls -lh TOTO.txt >> Q2_archive_TOTO.txt
+        ls -lh TOTO.txt| cut -d " " -f5 >> Q2_archive_TOTO.txt
     - name: Commit et push des fichiers
       run: |
         git config user.name A1exPrdgc
